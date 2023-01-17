@@ -27,7 +27,7 @@ internal class Program
         }
 
         Cleric npc = new Cleric();
-        npc.hp = npc.RollHP(iLevel, npc.hitD, 3);
+        npc.hp = npc.RollAvgHP(iLevel, npc.hitD, 3);
 
         Console.WriteLine("\nLevel " + level + " cleric has " + npc.hp.ToString() + " HP.");
 
