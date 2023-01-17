@@ -1,5 +1,6 @@
 ﻿using System;
 using DMBot;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 internal class Program
 {
@@ -8,8 +9,6 @@ internal class Program
         Console.WriteLine("Enter Character Level:");
         string level;
         level = Console.ReadLine();
-
-        Console.WriteLine("You entered level: " + level);
 
         Console.WriteLine("New Character Ability Scores:");
         Console.WriteLine("STR\tDEX\tCON\tINT\tWIS\tCHA\n");
@@ -21,9 +20,17 @@ internal class Program
             Console.Write(stat.ToString() + "\t");
         }
 
+        int iLevel = 1;
+        if (!string.IsNullOrEmpty(level))
+        {
+            int.TryParse(level, out iLevel);
+        }
 
+        Cleric npc = new Cleric();
+        npc.hp = npc.RollHP(iLevel, npc.hitD, 3);
 
-        // function to generate HP, AC, etc. based on stats and level
+        Console.WriteLine("\nLevel " + level + " cleric has " + npc.hp.ToString() + " HP.");
+
     }
 }
 
