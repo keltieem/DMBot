@@ -21,12 +21,9 @@ namespace DMBot
         {
         }
 
-        public int RollHP(int level, int hitD, int conMod)
+        public int RollAvgHP(int level, int hitD, int conMod)
         {
             double hp = (level * ((hitD / 2) + 0.5)) + conMod;
-
-            //Console.WriteLine("Level: {0}, HitD: {1}, ConMod: {2}, HP: {3}, Floor: {4}", level, hitD, conMod, hp.ToString(), Math.Floor(hp).ToString());
-
             return Convert.ToInt32(Math.Floor(hp));
         }
 

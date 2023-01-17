@@ -11,10 +11,7 @@ namespace DMBot
 			Methods
 		*/
 
-        public Dice()
-		{
-
-		}
+        public Dice() {}
 
 		public static int RollDx(int x)
 		{
